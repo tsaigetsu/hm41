@@ -37,7 +37,10 @@ img {
 }
 
 .head {
-    border-bottom: 1px solid #e7e9fc
+    border-bottom: 1px solid #e7e9fc;
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .wrap-one {
@@ -55,6 +58,10 @@ img {
     align-items: center;
 }
 
+.navigation a::after {
+    color: #404bbf;
+}
+
 .logo {
     color: var(--IRIS, #4D5AE5);
     font-family: 'Raleway', sans-serif;
@@ -67,7 +74,7 @@ img {
     margin-right: 76px;
 }
 
-.studio {
+.studio-span {
     font-family: 'Raleway', sans-serif;
     color: #2e2f42;
     font-size: 18px;
@@ -76,6 +83,7 @@ img {
     /* 116.667% */
     letter-spacing: 0.02em;
     text-transform: uppercase;
+    position: relative;
 }
 
 .page-list {
@@ -92,6 +100,20 @@ img {
     /* 150% */
     letter-spacing: 0.02em;
     padding: 24px 0;
+    position: relative;
+}
+
+.studio::after {
+    color: #404bbf;
+    content: '';
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 4px;
+    background-color: #404bbf;
+    border-radius: 2px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .page-list-item:hover,
@@ -101,7 +123,9 @@ img {
 
 .adress {
     font-style: normal;
+    display: flex;
     margin-left: auto;
+    align-items: center;
 }
 
 .adress-list {
@@ -118,18 +142,29 @@ img {
     /* 150% */
     letter-spacing: 0.02em;
     padding: 24px 0;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 
 .adress-item:hover,
 .adress-item:focus {
     color: #404bbf;
 }
 
-.main {}
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .hero {
+    max-width: 1440px;
     background-color: #2e2f42;
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/coworking.jpg);
     padding: 188px 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .main-heading {
@@ -304,7 +339,7 @@ img {
     text-transform: uppercase;
 }
 
-.footer .studio {
+.footer .studio-span {
     color: #f4f4fd;
 }
 
